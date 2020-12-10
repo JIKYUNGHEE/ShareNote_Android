@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ShareNote</string>
+    <string name="kakao_app_key">dd23c2750d6bd625c03699d26f999737</string>
+    <string name="naver_client_key">edYI0EafRxuJFk0NcOnf</string>
+    <string name="naver_secret_key">x4Ic9e0Hv0</string>
 </resources>

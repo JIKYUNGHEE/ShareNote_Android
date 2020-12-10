@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -14,13 +15,18 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
+import com.nhn.android.naverlogin.OAuthLogin
+import com.nhn.android.naverlogin.OAuthLoginHandler
 import kr.co.snc.sharenote.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
     private val TAG: String? = "MainActivity"
+    private val LOGIN_INFO_SNS: String? = "LOGIN_INFO_SNS"
+    private val LOGIN_INFO_ID: String? = "LOGIN_INFO_ID"
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var binding: ActivityMainBinding
+    private lateinit var mOAuthLoginModule : OAuthLogin
 
     companion object {
         var RC_SIGN_IN: Int = 1;
@@ -35,12 +41,37 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * OAuthLoginHandler를 startOAuthLoginActivity() 메서드 호출 시 파라미터로 전달하거나 OAuthLoginButton
+     * 객체에 등록하면 인증이 종료되는 것을 확인할 수 있습니다.
+     */
+    private val mOAuthLoginHandler: OAuthLoginHandler = object : OAuthLoginHandler() {
+        override fun run(success: Boolean) {
+            if (success) {
+                val accessToken: String = mOAuthLoginModule.getAccessToken(applicationContext)
+                val refreshToken: String = mOAuthLoginModule.getRefreshToken(applicationContext)
+                val expiresAt: Long = mOAuthLoginModule.getExpiresAt(applicationContext)
+                val tokenType: String = mOAuthLoginModule.getTokenType(applicationContext)
+                binding.loginSuccess.text = mOAuthLoginModule.getState(applicationContext).toString()
+            } else {
+                val errorCode: String =
+                    mOAuthLoginModule.getLastErrorCode(applicationContext).getCode()
+                val errorDesc: String = mOAuthLoginModule.getLastErrorDesc(applicationContext)
+                Toast.makeText(
+                    applicationContext, "errorCode:" + errorCode
+                            + ", errorDesc:" + errorDesc, Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initGoogleLogin()
+        initNaverLogin()
         binding.loginGoogle.setSize(SignInButton.SIZE_STANDARD)
         binding.loginGoogle.setOnClickListener { view ->
             val signInIntent: Intent = mGoogleSignInClient?.signInIntent
@@ -56,7 +87,10 @@ class MainActivity : AppCompatActivity() {
                 LoginClient.instance.loginWithKakaoAccount(applicationContext, callback = callback)
             }
         }
+
+        binding.loginNaver.setOAuthLoginHandler(mOAuthLoginHandler)
     }
+
 
     private fun initGoogleLogin() {
         val gso =
@@ -65,6 +99,13 @@ class MainActivity : AppCompatActivity() {
                 .build()
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
     }
+
+    private fun initNaverLogin() {
+        mOAuthLoginModule = OAuthLogin.getInstance()
+        mOAuthLoginModule.init(this,
+                getString(R.string.naver_client_key), getString(R.string.naver_secret_key), "ShareNote")
+    }
+
 
     override fun onStart() {
         super.onStart()
@@ -76,6 +117,11 @@ class MainActivity : AppCompatActivity() {
         if (account != null) {
             binding.loginSuccess.visibility = View.VISIBLE
             Log.d("MainActivity", "account: $account, email: ${account.email}")
+
+            val intent: Intent = Intent(this, MainActivity::class.java)
+            intent.putExtra(LOGIN_INFO_SNS, "Google")
+            intent.putExtra(LOGIN_INFO_ID, account.email)
+            startActivity(intent)
         }
     }
 

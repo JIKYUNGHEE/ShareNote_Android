@@ -40,7 +40,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api files('/libs/naveridlogin_android_sdk_4.2.6.aar')
     implementation platform('com.google.firebase:firebase-bom:26.1.1')
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.core:core-ktx:1.0.2'
