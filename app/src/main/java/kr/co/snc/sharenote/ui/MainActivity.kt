@@ -1,4 +1,4 @@
-package kr.co.snc.sharenote
+package kr.co.snc.sharenote.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -17,11 +17,12 @@ import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
 import com.nhn.android.naverlogin.OAuthLogin
 import com.nhn.android.naverlogin.OAuthLoginHandler
+import kr.co.snc.sharenote.R
 import kr.co.snc.sharenote.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    private val TAG: String? = "MainActivity"
+    private val TAG: String? = this::class.java.simpleName
     private val LOGIN_INFO_SNS: String? = "LOGIN_INFO_SNS"
     private val LOGIN_INFO_ID: String? = "LOGIN_INFO_ID"
     private lateinit var mGoogleSignInClient: GoogleSignInClient
@@ -75,7 +76,9 @@ class MainActivity : AppCompatActivity() {
         binding.loginGoogle.setSize(SignInButton.SIZE_STANDARD)
         binding.loginGoogle.setOnClickListener { view ->
             val signInIntent: Intent = mGoogleSignInClient?.signInIntent
-            startActivityForResult(signInIntent, RC_SIGN_IN)
+            startActivityForResult(signInIntent,
+                RC_SIGN_IN
+            )
 
         }
 
@@ -103,7 +106,9 @@ class MainActivity : AppCompatActivity() {
     private fun initNaverLogin() {
         mOAuthLoginModule = OAuthLogin.getInstance()
         mOAuthLoginModule.init(this,
-                getString(R.string.naver_client_key), getString(R.string.naver_secret_key), "ShareNote")
+                getString(R.string.naver_client_key), getString(
+                R.string.naver_secret_key
+            ), "ShareNote")
     }
 
 
