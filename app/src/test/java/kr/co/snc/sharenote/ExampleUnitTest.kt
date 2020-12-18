@@ -1,5 +1,6 @@
 package kr.co.snc.sharenote
 
+import android.util.Log
 import kr.co.snc.sharenote.network.api.service.MemberService
 import kr.co.snc.sharenote.network.data.response.ResponseDuplicateMember
 import org.junit.Test
@@ -31,17 +32,21 @@ class ExampleUnitTest {
     @Test
     fun callDuplicateId_and_ResponseIsCorrect() {
         val testDuplicateId = "zvkbeng12345"
-        memberService.checkDuplicateId(testDuplicateId).
-        enqueue(object :
+        memberService.checkDuplicateId(testDuplicateId).enqueue(object :
             Callback<ResponseDuplicateMember> {
             override fun onFailure(call: Call<ResponseDuplicateMember>, t: Throwable) {
-
+                Log.d("TAG", "onFailure")
             }
 
             override fun onResponse(call: Call<ResponseDuplicateMember>, response: Response<ResponseDuplicateMember>) {
-
+                Log.d("Tag", "onResponse")
+                if(response.code() == 200) {
+                    var member : ResponseDuplicateMember? = response.body()
+                    assertEquals(member?.msg, "사용중인 아이디 입니다.")
+                } else {
+                    Log.d("TAG", "onResponse error code")
+                }
             }
-
         })
     }
 }

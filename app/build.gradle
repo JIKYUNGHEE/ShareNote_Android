@@ -34,7 +34,7 @@ android {
     }
 
     testOptions {
-        unitTests.returnDefultValues = true
+        unitTests.returnDefaultValues = true
     }
 
     viewBinding {
