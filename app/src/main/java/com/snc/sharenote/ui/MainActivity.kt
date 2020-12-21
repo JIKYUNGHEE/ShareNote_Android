@@ -1,6 +1,7 @@
-package kr.co.snc.sharenote.ui
+package com.snc.sharenote.ui
 
 import android.content.Intent
+import android.net.Network
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -17,12 +18,13 @@ import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
 import com.nhn.android.naverlogin.OAuthLogin
 import com.nhn.android.naverlogin.OAuthLoginHandler
-import kr.co.snc.sharenote.R
-import kr.co.snc.sharenote.databinding.ActivityMainBinding
+import com.snc.sharenote.R
+import com.snc.sharenote.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
     private val TAG: String? = this::class.java.simpleName
+
     private val LOGIN_INFO_SNS: String? = "LOGIN_INFO_SNS"
     private val LOGIN_INFO_ID: String? = "LOGIN_INFO_ID"
     private lateinit var mGoogleSignInClient: GoogleSignInClient
@@ -37,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
         if (error != null) {
             Log.e(TAG, "로그인 실패", error)
+            startActivity(Intent(this, NetworkTestActivity::class.java))
         } else if (token != null) {
             Log.i(TAG, "로그인 성공 ${token.accessToken}")
         }
@@ -76,10 +79,7 @@ class MainActivity : AppCompatActivity() {
         binding.loginGoogle.setSize(SignInButton.SIZE_STANDARD)
         binding.loginGoogle.setOnClickListener { view ->
             val signInIntent: Intent = mGoogleSignInClient?.signInIntent
-            startActivityForResult(signInIntent,
-                RC_SIGN_IN
-            )
-
+            startActivityForResult(signInIntent, RC_SIGN_IN)
         }
 
         binding.loginKakao.setOnClickListener { view ->

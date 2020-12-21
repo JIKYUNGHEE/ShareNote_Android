@@ -1,12 +1,13 @@
-package kr.co.snc.sharenote
+package com.snc.sharenote
 
 import android.util.Log
-import kr.co.snc.sharenote.network.api.service.MemberService
-import kr.co.snc.sharenote.network.data.response.ResponseDuplicateMember
+import com.snc.sharenote.network.api.service.MemberService
+import com.snc.sharenote.network.data.response.ResponseDuplicateMember
 import org.junit.Test
 
 import org.junit.Assert.*
 import org.junit.Before
+import org.mockito.Mock
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,11 +18,10 @@ import retrofit2.Response
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
-    private lateinit var memberService: MemberService
+    @Mock private lateinit var memberService: MemberService
 
     @Before
-    fun setUpTest(){
-        memberService = MemberService.create()
+    fun setUp(){
     }
 
     @Test

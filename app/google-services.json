@@ -7,6 +7,42 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:1023774833218:android:ed68c5d40f87b98eb68bdb",
+        "android_client_info": {
+          "package_name": "com.snc.sharenote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1023774833218-8qd2tvqq16j9kc451i64t42nslaktpam.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN5rip4GIwcWpBw3EH9q8_WK-pABj883I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1023774833218-8qd2tvqq16j9kc451i64t42nslaktpam.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1023774833218-u4r5kjvef7oltpkaqlt4eakoicsr7lu1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kr.co.snc.sharenote"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:1023774833218:android:5e890cdeec378f01b68bdb",
         "android_client_info": {
           "package_name": "kr.co.snc.sharenote"
@@ -14,11 +50,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "1023774833218-22hlcl6l687aauipj4gq50urbsniebo4.apps.googleusercontent.com",
+          "client_id": "1023774833218-gskqb3j26s62ro1i7pln0eie22i9ttr2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "kr.co.snc.sharenote",
-            "certificate_hash": "6be0f00d84066b12470bd76a945e7dbfdcade949"
+            "certificate_hash": "1dcfd60e8250dc531def62258d80e7063696687d"
           }
         },
         {
