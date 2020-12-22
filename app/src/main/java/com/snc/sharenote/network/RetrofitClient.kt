@@ -1,9 +1,9 @@
 package com.snc.sharenote.network
 
+import HALConverterFactory
 import com.google.gson.GsonBuilder
-import com.google.gson.internal.GsonBuildConfig
+import com.snc.sharenote.network.data.response.ResponseDefault
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
     private var instance : Retrofit ? = null
@@ -14,7 +14,7 @@ object RetrofitClient {
         if(instance == null) {
             instance = Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(HALConverterFactory.create(ResponseDefault::class.java))
                 .build()
         }
 

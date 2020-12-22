@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.snc.sharenote.R
 import com.snc.sharenote.databinding.ActivityNetworkTestBinding
 import com.snc.sharenote.network.RetrofitClient
 import com.snc.sharenote.network.api.service.MemberService
-import com.snc.sharenote.network.data.response.ResponseDuplicateMember
-import kotlinx.android.synthetic.main.activity_network_test.*
+import com.snc.sharenote.network.data.response.ResponseDefault
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,14 +47,14 @@ class NetworkTestActivity : AppCompatActivity() {
     }
 
     private fun checkDuplicate(keyword: String) {
-        memberService.checkDuplicateId(keyword).enqueue(object : Callback<ResponseDuplicateMember> {
-            override fun onFailure(call: Call<ResponseDuplicateMember>, t: Throwable) {
+        memberService.checkDuplicateId(keyword).enqueue(object : Callback<ResponseDefault> {
+            override fun onFailure(call: Call<ResponseDefault>, t: Throwable) {
                 Log.d(TAG, "실패 : {$t}")
             }
 
             override fun onResponse(
-                call: Call<ResponseDuplicateMember>,
-                response: Response<ResponseDuplicateMember>
+                call: Call<ResponseDefault>,
+                response: Response<ResponseDefault>
             ) {
                 Log.d(TAG, "성공^^")
                 if (response.code() == 200) {  // 성공상태
