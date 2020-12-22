@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     private val LOGIN_INFO_ID: String? = "LOGIN_INFO_ID"
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var binding: ActivityMainBinding
-    private lateinit var mOAuthLoginModule : OAuthLogin
+    private lateinit var mOAuthLoginModule: OAuthLogin
 
     companion object {
         var RC_SIGN_IN: Int = 1;
@@ -56,7 +56,8 @@ class MainActivity : AppCompatActivity() {
                 val refreshToken: String = mOAuthLoginModule.getRefreshToken(applicationContext)
                 val expiresAt: Long = mOAuthLoginModule.getExpiresAt(applicationContext)
                 val tokenType: String = mOAuthLoginModule.getTokenType(applicationContext)
-                binding.loginSuccess.text = mOAuthLoginModule.getState(applicationContext).toString()
+                binding.loginSuccess.text =
+                    mOAuthLoginModule.getState(applicationContext).toString()
             } else {
                 val errorCode: String =
                     mOAuthLoginModule.getLastErrorCode(applicationContext).getCode()
@@ -105,10 +106,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun initNaverLogin() {
         mOAuthLoginModule = OAuthLogin.getInstance()
-        mOAuthLoginModule.init(this,
-                getString(R.string.naver_client_key), getString(
+        mOAuthLoginModule.init(
+            this,
+            getString(R.string.naver_client_key), getString(
                 R.string.naver_secret_key
-            ), "ShareNote")
+            ), "ShareNote"
+        )
     }
 
 

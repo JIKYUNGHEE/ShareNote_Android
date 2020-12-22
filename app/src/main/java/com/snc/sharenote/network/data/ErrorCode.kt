@@ -1,4 +1,4 @@
-package com.snc.sharenote.network.data.response
+package com.snc.sharenote.network.data
 
 enum class ErrorCode {
     /**

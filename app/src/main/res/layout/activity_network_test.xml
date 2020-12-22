@@ -6,21 +6,104 @@
     android:layout_height="match_parent"
     tools:context=".ui.NetworkTestActivity">
 
-    <EditText
-        android:id="@+id/et_check_id"
-        android:layout_width="200dp"
-        android:layout_height="56dp"
-        app:layout_constraintBottom_toTopOf="@id/btn_check_duplicate"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <Button
-        android:id="@+id/btn_check_duplicate"
+    <LinearLayout
+        android:id="@+id/ll_check_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="아이디중복체크"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ll_member_1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent">
+        <EditText
+            android:id="@+id/et_check_id"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_check_duplicate"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_check_duplicate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디중복체크"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_member_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ll_check_id"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <Button
+            android:id="@+id/btn_login_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal로그인" />
+        <Button
+            android:id="@+id/btn_login_sns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sns로그인" />
+        <Button
+            android:id="@+id/btn_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원가입" />
+        <Button
+            android:id="@+id/btn_find_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원조회" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_member_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ll_member_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <Button
+            android:id="@+id/btn_edit_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원 정보 수정" />
+        <Button
+            android:id="@+id/btn_delete_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원 삭제" />
+        <Button
+            android:id="@+id/btn_cert_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="핸드폰 인증" />
+        <Button
+            android:id="@+id/btn_find_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디 찾기(by phone)" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_member_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ll_member_2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <Button
+            android:id="@+id/btn_category_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카테고리 리스트" />
+        <Button
+            android:id="@+id/btn_edit_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카테고리 수정" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
