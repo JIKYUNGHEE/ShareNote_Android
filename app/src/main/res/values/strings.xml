@@ -3,4 +3,18 @@
     <string name="kakao_app_key">dd23c2750d6bd625c03699d26f999737</string>
     <string name="naver_client_key">edYI0EafRxuJFk0NcOnf</string>
     <string name="naver_secret_key">x4Ic9e0Hv0</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">홈</string>
+    <string name="title_analysis">기업분석</string>
+    <string name="title_tradingNotes">매매일지</string>
+    <string name="title_shareKeep">쉐어킵</string>
 </resources>

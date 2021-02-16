@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.snc.sharenote.ui.main.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_analysis"
+        android:name="com.snc.sharenote.ui.main.ui.analysis.AnalysisFragment"
+        android:label="@string/title_analysis"
+        tools:layout="@layout/fragment_analysis" />
+
+    <fragment
+        android:id="@+id/navigation_tradingNotes"
+        android:name="com.snc.sharenote.ui.main.ui.tradingNotes.TradingNotesFragment"
+        android:label="@string/title_tradingNotes"
+        tools:layout="@layout/fragment_trading_notes" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.snc.sharenote.ui.main.ui.shareKeep.ShareKeepFragment"
+        android:label="@string/title_shareKeep"
+        tools:layout="@layout/fragment_sharekeep" />
+</navigation>

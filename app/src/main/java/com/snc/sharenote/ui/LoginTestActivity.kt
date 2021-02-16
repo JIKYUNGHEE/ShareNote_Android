@@ -1,7 +1,6 @@
 package com.snc.sharenote.ui
 
 import android.content.Intent
-import android.net.Network
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -19,16 +18,17 @@ import com.kakao.sdk.auth.model.OAuthToken
 import com.nhn.android.naverlogin.OAuthLogin
 import com.nhn.android.naverlogin.OAuthLoginHandler
 import com.snc.sharenote.R
+import com.snc.sharenote.databinding.ActivityLoginTestBinding
 import com.snc.sharenote.databinding.ActivityMainBinding
 
 
-class MainActivity : AppCompatActivity() {
+class LoginTestActivity : AppCompatActivity() {
     private val TAG: String? = this::class.java.simpleName
 
     private val LOGIN_INFO_SNS: String? = "LOGIN_INFO_SNS"
     private val LOGIN_INFO_ID: String? = "LOGIN_INFO_ID"
     private lateinit var mGoogleSignInClient: GoogleSignInClient
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityLoginTestBinding
     private lateinit var mOAuthLoginModule: OAuthLogin
 
     companion object {
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityLoginTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initGoogleLogin()
@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
             binding.loginSuccess.visibility = View.VISIBLE
             Log.d("MainActivity", "account: $account, email: ${account.email}")
 
-            val intent: Intent = Intent(this, MainActivity::class.java)
+            val intent: Intent = Intent(this, LoginTestActivity::class.java)
             intent.putExtra(LOGIN_INFO_SNS, "Google")
             intent.putExtra(LOGIN_INFO_ID, account.email)
             startActivity(intent)
