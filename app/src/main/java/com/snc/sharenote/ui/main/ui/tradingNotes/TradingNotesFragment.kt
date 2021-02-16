@@ -23,6 +23,9 @@ class TradingNotesFragment : Fragment() {
             ViewModelProvider(this).get(TradingNotesViewModel::class.java)
         mTradingNotesBinding = FragmentTradingNotesBinding.inflate(inflater)
 
+        var rvTradingNotes = mTradingNotesBinding.rvTradingNotes
+        rvTradingNotes.adapter = TradingNoteAdapter()
+
         tradingNotesViewModel.text.observe(viewLifecycleOwner, Observer {
             mTradingNotesBinding.textTradingNotes.text = it
         })

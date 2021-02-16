@@ -17,4 +17,7 @@
     <string name="title_analysis">기업분석</string>
     <string name="title_tradingNotes">매매일지</string>
     <string name="title_shareKeep">쉐어킵</string>
+    <string name="trading_note_title">기아차 10퍼센트 달성하자</string>
+    <string name="trading_note_test_tag">#존버</string>
+    <string name="trading_note_test_tag2">#한주당</string>
 </resources>
