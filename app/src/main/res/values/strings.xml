@@ -17,7 +17,18 @@
     <string name="title_analysis">기업분석</string>
     <string name="title_tradingNotes">매매일지</string>
     <string name="title_shareKeep">쉐어킵</string>
-    <string name="trading_note_title">기아차 10퍼센트 달성하자</string>
-    <string name="trading_note_test_tag">#존버</string>
-    <string name="trading_note_test_tag2">#한주당</string>
+
+    <string name="trading_note_title1">기아차 10퍼센트 달성하자</string>
+    <string name="trading_note_test1_tag1">#존버</string>
+    <string name="trading_note_test1_tag2">#한주당</string>
+
+    <string name="trading_note_title2">[거래완료] 개미주식 122조원 돌파한 날 !! 와 대박스~~~~~ㅋㅋㅋㅋㅋㅋ</string>
+    <string name="trading_note_test2_tag1">#존버</string>
+    <string name="trading_note_test2_tag2">#한주당</string>
+    <string name="trading_note_test2_tag3">#5개씩</string>
+    <string name="trading_note_test2_tag4">#보여지고</string>
+
+    <string name="trading_note_title3">기아차 10퍼센트 달성하자22222</string>
+    <string name="trading_note_test3_tag1">#존버</string>
+    <string name="trading_note_test3_tag2">#한주당</string>
 </resources>

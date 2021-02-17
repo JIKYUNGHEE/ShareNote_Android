@@ -1,24 +1,26 @@
 package com.snc.sharenote.ui.main.ui.tradingNotes
 
+import android.text.TextUtils
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.snc.sharenote.ui.main.ui.tradingNotes.data.TradingNote
 
-class TradingNoteAdapter : RecyclerView.Adapter<TradingNoteViewHolder>() {
-    private lateinit var list: List<TradingNote>
+class TradingNoteAdapter(var tradingNotes: List<TradingNote>) :
+    RecyclerView.Adapter<TradingNoteViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TradingNoteViewHolder {
         return TradingNoteViewHolder(parent)
     }
 
     override fun getItemCount(): Int {
-        return list.size
+        return tradingNotes.size
     }
 
     override fun onBindViewHolder(holder: TradingNoteViewHolder, position: Int) {
-        var note = list[position]
-        holder.title = note.title
-        holder.tags1 = note.tags[0]
-        holder.tags2 = note.tags[1]
+        var note = tradingNotes[position]
+
+        holder.title.text = if (!TextUtils.isEmpty(note.title)) note.title else ""
+        holder.tags1.text = if (!TextUtils.isEmpty(note.tags[0])) note.tags [0] else ""
+        holder.tags2.text = if (!TextUtils.isEmpty(note.tags[1])) note.tags [1] else ""
     }
 }
