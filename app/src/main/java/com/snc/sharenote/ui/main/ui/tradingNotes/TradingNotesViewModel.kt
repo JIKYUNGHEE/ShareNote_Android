@@ -21,7 +21,7 @@ class TradingNotesViewModel(application: Application) : AndroidViewModel(applica
 
     val tradingNotes:LiveData<List<TradingNote>> = _tradingNotes
 
-    fun reqGetTradingNotes(): List<TradingNote> {
+    private fun reqGetTradingNotes(): List<TradingNote> {
         var list = arrayListOf<TradingNote>()
         list.add(TradingNote(context.getString(R.string.trading_note_title1),
             arrayListOf(context.getString(R.string.trading_note_test1_tag1), context.getString(R.string.trading_note_test1_tag2))))

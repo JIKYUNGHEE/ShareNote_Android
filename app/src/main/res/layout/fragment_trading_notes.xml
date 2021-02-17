@@ -27,9 +27,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_trading_notes"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/rv_trading_note_margin"
+        android:layout_marginRight="@dimen/rv_trading_note_margin"
         app:layout_constraintTop_toBottomOf="@id/nsv_calendar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         tools:listitem="@layout/layout_trading_note"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

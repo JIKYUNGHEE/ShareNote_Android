@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="tv_trading_note_title">16sp</dimen>
     <dimen name="tv_trading_note_test_tag">12sp</dimen>
+    <dimen name="rv_trading_note_margin">20dp</dimen>
 </resources>
