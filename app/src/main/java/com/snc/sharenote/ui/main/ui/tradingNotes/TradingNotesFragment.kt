@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.snc.sharenote.databinding.FragmentTradingNotesBinding
 import com.snc.sharenote.ui.main.RecyclerViewItemDecoration
 
@@ -34,8 +33,8 @@ class TradingNotesFragment : Fragment() {
             rvTradingNotes.adapter = TradingNoteAdapter(it)
         })
 
-        tradingNotesViewModel.text.observe(viewLifecycleOwner, Observer {
-            mTradingNotesBinding.textTradingNotes.text = it
+        tradingNotesViewModel.dayOfTrading.observe(viewLifecycleOwner, Observer {
+            mTradingNotesBinding.dayTradingNotes.text = it
         })
 
         return mTradingNotesBinding.root

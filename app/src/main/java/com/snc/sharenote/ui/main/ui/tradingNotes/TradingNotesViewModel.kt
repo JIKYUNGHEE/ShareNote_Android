@@ -10,15 +10,14 @@ import com.snc.sharenote.ui.main.ui.tradingNotes.data.TradingNote
 class TradingNotesViewModel(application: Application) : AndroidViewModel(application) {
     private val context = getApplication<Application>().applicationContext
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is tradingNotes Fragment"
+    private val _dayOfTrading = MutableLiveData<String>().apply {
+        value = context.getString(R.string.day_of_trading)
     }
-    val text: LiveData<String> = _text
+    val dayOfTrading: LiveData<String> = _dayOfTrading
 
     private val _tradingNotes = MutableLiveData<List<TradingNote>>().apply {
         value = reqGetTradingNotes()
     }
-
     val tradingNotes:LiveData<List<TradingNote>> = _tradingNotes
 
     private fun reqGetTradingNotes(): List<TradingNote> {

@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.ui.tradingNotes.TradingNotesFragment">
 
-    <TextView
-        android:id="@+id/text_trading_notes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsv_calendar"
@@ -25,15 +13,29 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_trading_notes"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginLeft="@dimen/rv_trading_note_margin"
         android:layout_marginRight="@dimen/rv_trading_note_margin"
-        app:layout_constraintTop_toBottomOf="@id/nsv_calendar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:listitem="@layout/layout_trading_note"
-        />
+        app:layout_constraintTop_toBottomOf="@id/nsv_calendar">
+
+        <TextView
+            android:id="@+id/day_trading_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12일"
+            android:textSize="18sp"
+            android:layout_margin="8dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_trading_notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/layout_trading_note" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
