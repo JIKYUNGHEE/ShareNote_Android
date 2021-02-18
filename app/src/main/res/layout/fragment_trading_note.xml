@@ -5,10 +5,27 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.ui.tradingNotes.note.TradingNoteFragment">
 
-    <TextView
-        android:id="@+id/text_trading_note"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/text_trading_note"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Hello" />
+
+            <include layout="@layout/layout_post_trading_note_title"/>
+
+            <include layout="@layout/layout_post_trading_note_stocks"/>
+
+            <include layout="@layout/layout_post_trading_note_news"/>
+
+            <include layout="@layout/layout_post_trading_note_memo"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </FrameLayout>

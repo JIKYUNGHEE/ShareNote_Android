@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_post_trading_note_title"
+            android:layout_width="@dimen/tv_post_trading_note_width"
+            android:layout_height="0dp"
+            android:text="@string/post_trading_note_title"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/et_post_trading_note_title"
+            app:layout_constraintBottom_toBottomOf="@id/et_post_trading_note_title"/>
+
+        <EditText
+            android:id="@+id/et_post_trading_note_title"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:textSize="14sp"
+            android:hint="@string/post_trading_note_title_hint"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/tv_post_trading_note_title"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_post_trading_note_tags"
+            android:layout_width="@dimen/tv_post_trading_note_width"
+            android:layout_height="0dp"
+            android:text="@string/post_trading_note_tags"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/et_post_trading_note_tags"
+            app:layout_constraintBottom_toBottomOf="@id/et_post_trading_note_tags"/>
+
+        <EditText
+            android:id="@+id/et_post_trading_note_tags"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:textSize="14sp"
+            android:hint="@string/post_trading_note_tags_hint"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/tv_post_trading_note_tags"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_post_trading_note_date"
+            android:layout_width="@dimen/tv_post_trading_note_width"
+            android:layout_height="0dp"
+            android:text="@string/post_trading_note_date"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_post_trading_note_date"
+            app:layout_constraintBottom_toBottomOf="@id/btn_post_trading_note_date"/>
+
+        <Button
+            android:id="@+id/btn_post_trading_note_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:textSize="14sp"
+            android:hint="@string/post_trading_note_day_hint"
+            android:gravity="left|center_vertical"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/tv_post_trading_note_date"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

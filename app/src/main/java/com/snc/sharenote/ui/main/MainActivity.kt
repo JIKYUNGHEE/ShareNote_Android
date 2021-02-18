@@ -12,9 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.snc.sharenote.R
-import com.snc.sharenote.ui.main.ui.tradingNotes.main.TradingNotesFragment
 import com.snc.sharenote.ui.main.ui.tradingNotes.main.TradingNotesFragmentDirections
-import com.snc.sharenote.ui.main.ui.tradingNotes.note.TradingNoteFragment
 
 class MainActivity : AppCompatActivity() {
 

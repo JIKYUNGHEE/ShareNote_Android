@@ -1,38 +1,5 @@
 <resources>
-    <string name="app_name">ShareNote</string>
-    <string name="kakao_app_key">dd23c2750d6bd625c03699d26f999737</string>
-    <string name="naver_client_key">edYI0EafRxuJFk0NcOnf</string>
-    <string name="naver_secret_key">x4Ic9e0Hv0</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">홈</string>
-    <string name="title_analysis">기업분석</string>
-    <string name="title_tradingNotes">매매일지</string>
-    <string name="title_shareKeep">쉐어킵</string>
-
-    <string name="day_of_trading">17일</string>
-
-    <string name="trading_note_title1">기아차 10퍼센트 달성하자</string>
-    <string name="trading_note_test1_tag1">#존버</string>
-    <string name="trading_note_test1_tag2">#한주당</string>
-
-    <string name="trading_note_title2">[거래완료] 개미주식 122조원 돌파한 날 !! 와 대박스~~~~~ㅋㅋㅋㅋㅋㅋ</string>
-    <string name="trading_note_test2_tag1">#존버</string>
-    <string name="trading_note_test2_tag2">#한주당</string>
-    <string name="trading_note_test2_tag3">#5개씩</string>
-    <string name="trading_note_test2_tag4">#보여지고</string>
-
-    <string name="trading_note_title3">기아차 10퍼센트 달성하자22222</string>
-    <string name="trading_note_test3_tag1">#존버</string>
-    <string name="trading_note_test3_tag2">#한주당</string>
+    <!-- 테스트 -->
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -124,5 +91,47 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
-    <string name="title_tradingNote">작성</string>
+
+    <!-- Share Note -->
+    <string name="app_name">ShareNote</string>
+    <string name="kakao_app_key">dd23c2750d6bd625c03699d26f999737</string>
+    <string name="naver_client_key">edYI0EafRxuJFk0NcOnf</string>
+    <string name="naver_secret_key">x4Ic9e0Hv0</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">홈</string>
+    <string name="title_analysis">기업분석</string>
+    <string name="title_tradingNotes">매매일지</string>
+    <string name="title_shareKeep">쉐어킵</string>
+
+    <string name="day_of_trading">17일</string>
+
+    <string name="trading_note_title1">기아차 10퍼센트 달성하자</string>
+    <string name="trading_note_test1_tag1">#존버</string>
+    <string name="trading_note_test1_tag2">#한주당</string>
+
+    <string name="trading_note_title2">[거래완료] 개미주식 122조원 돌파한 날 !! 와 대박스~~~~~ㅋㅋㅋㅋㅋㅋ</string>
+    <string name="trading_note_test2_tag1">#존버</string>
+    <string name="trading_note_test2_tag2">#한주당</string>
+    <string name="trading_note_test2_tag3">#5개씩</string>
+    <string name="trading_note_test2_tag4">#보여지고</string>
+
+    <string name="trading_note_title3">기아차 10퍼센트 달성하자22222</string>
+    <string name="trading_note_test3_tag1">#존버</string>
+    <string name="trading_note_test3_tag2">#한주당</string>
+    <string name="title_tradingNote">매매일지 작성</string>
+    <string name="post_trading_note_title">제목</string>
+    <string name="post_trading_note_title_hint">제목을 입력해주세요</string>
+    <string name="post_trading_note_tags">태그</string>
+    <string name="post_trading_note_tags_hint">태그를 입력해주세요.(최대 10개)</string>
+    <string name="post_trading_note_date">날짜</string>
+    <string name="post_trading_note_day_hint">2021년 02월 18일 오후 7:43</string>
 </resources>
