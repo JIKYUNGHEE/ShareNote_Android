@@ -1,4 +1,4 @@
-package com.snc.sharenote.ui.main.ui.tradingNotes
+package com.snc.sharenote.ui.main.ui.tradingNotes.main
 
 import android.text.TextUtils
 import android.view.ViewGroup
@@ -9,7 +9,9 @@ class TradingNoteAdapter(var tradingNotes: List<TradingNote>) :
     RecyclerView.Adapter<TradingNoteViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TradingNoteViewHolder {
-        return TradingNoteViewHolder(parent)
+        return TradingNoteViewHolder(
+            parent
+        )
     }
 
     override fun getItemCount(): Int {

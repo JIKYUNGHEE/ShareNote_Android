@@ -1,4 +1,4 @@
-package com.snc.sharenote.ui.main.ui.tradingNotes
+package com.snc.sharenote.ui.main.ui.tradingNotes.main
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

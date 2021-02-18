@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_tradingNotes"
-        android:name="com.snc.sharenote.ui.main.ui.tradingNotes.TradingNotesFragment"
+        android:name="com.snc.sharenote.ui.main.ui.tradingNotes.main.TradingNotesFragment"
         android:label="@string/title_tradingNotes"
         tools:layout="@layout/fragment_trading_notes" />
 

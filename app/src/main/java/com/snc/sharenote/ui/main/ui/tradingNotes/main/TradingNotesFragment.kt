@@ -1,4 +1,4 @@
-package com.snc.sharenote.ui.main.ui.tradingNotes
+package com.snc.sharenote.ui.main.ui.tradingNotes.main
 
 import android.animation.ObjectAnimator
 import android.os.Bundle
@@ -50,7 +50,10 @@ class TradingNotesFragment : Fragment() {
         rvTradingNotes.addItemDecoration(RecyclerViewItemDecoration(30))
 
         tradingNotesViewModel.tradingNotes.observe(viewLifecycleOwner, Observer {
-            rvTradingNotes.adapter = TradingNoteAdapter(it)
+            rvTradingNotes.adapter =
+                TradingNoteAdapter(
+                    it
+                )
         })
 
         tradingNotesViewModel.dayOfTrading.observe(viewLifecycleOwner, Observer {
