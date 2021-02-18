@@ -1,5 +1,6 @@
 package com.snc.sharenote.ui.main.ui.tradingNotes
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ class TradingNotesFragment : Fragment() {
 
     private lateinit var mTradingNotesBinding: FragmentTradingNotesBinding
     private lateinit var tradingNotesViewModel: TradingNotesViewModel
+    private var drawerToggle = true
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,6 +26,24 @@ class TradingNotesFragment : Fragment() {
         tradingNotesViewModel =
             ViewModelProvider(this).get(TradingNotesViewModel::class.java)
         mTradingNotesBinding = FragmentTradingNotesBinding.inflate(inflater)
+
+
+        var targetView = mTradingNotesBinding.content
+        var drawerButton = mTradingNotesBinding.drawer
+        drawerButton.setOnClickListener {
+            if (drawerToggle) {
+                var objectAnimator: ObjectAnimator =
+                    ObjectAnimator.ofFloat(targetView, View.TRANSLATION_Y, 800f)
+                objectAnimator.duration = 500
+                objectAnimator.start()
+            } else {
+                var objectAnimator: ObjectAnimator =
+                    ObjectAnimator.ofFloat(targetView, View.TRANSLATION_Y, 0f)
+                objectAnimator.duration = 500
+                objectAnimator.start()
+            }
+            drawerToggle = !drawerToggle
+        }
 
         var rvTradingNotes = mTradingNotesBinding.rvTradingNotes
         rvTradingNotes.layoutManager = LinearLayoutManager(context)
