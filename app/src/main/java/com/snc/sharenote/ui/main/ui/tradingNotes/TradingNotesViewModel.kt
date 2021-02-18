@@ -11,7 +11,7 @@ class TradingNotesViewModel(application: Application) : AndroidViewModel(applica
     private val context = getApplication<Application>().applicationContext
 
     private val _dayOfTrading = MutableLiveData<String>().apply {
-        value = context.getString(R.string.day_of_trading)
+        value = context.getString(R.string.day_of_trading)  //TODO. 달력과 연관시켜서, 반응형으로!
     }
     val dayOfTrading: LiveData<String> = _dayOfTrading
 
@@ -20,6 +20,9 @@ class TradingNotesViewModel(application: Application) : AndroidViewModel(applica
     }
     val tradingNotes:LiveData<List<TradingNote>> = _tradingNotes
 
+    /**
+     * 서버에 매매일지 리스트를 요청한다.
+     */
     private fun reqGetTradingNotes(): List<TradingNote> {
         var list = arrayListOf<TradingNote>()
         list.add(TradingNote(context.getString(R.string.trading_note_title1),
