@@ -34,6 +34,24 @@ class TradingNotesViewModel(application: Application) : AndroidViewModel(applica
 
         list.add(TradingNote(context.getString(R.string.trading_note_title3),
             arrayListOf(context.getString(R.string.trading_note_test3_tag1), context.getString(R.string.trading_note_test3_tag2))))
+
+        list.add(TradingNote(context.getString(R.string.trading_note_title3),
+            arrayListOf(context.getString(R.string.trading_note_test3_tag1), context.getString(R.string.trading_note_test3_tag2))))
+
+        list.add(TradingNote(context.getString(R.string.trading_note_title3),
+            arrayListOf(context.getString(R.string.trading_note_test3_tag1), context.getString(R.string.trading_note_test3_tag2))))
+
+        list.add(TradingNote(context.getString(R.string.trading_note_title3),
+            arrayListOf(context.getString(R.string.trading_note_test3_tag1), context.getString(R.string.trading_note_test3_tag2))))
+
+        list.add(TradingNote(context.getString(R.string.trading_note_title3),
+            arrayListOf(context.getString(R.string.trading_note_test3_tag1), context.getString(R.string.trading_note_test3_tag2))))
+
+        list.add(TradingNote(context.getString(R.string.trading_note_title3),
+            arrayListOf(context.getString(R.string.trading_note_test3_tag1), context.getString(R.string.trading_note_test3_tag2))))
+
+        list.add(TradingNote(context.getString(R.string.trading_note_title3),
+            arrayListOf(context.getString(R.string.trading_note_test3_tag1), context.getString(R.string.trading_note_test3_tag2))))
         return list
     }
 
