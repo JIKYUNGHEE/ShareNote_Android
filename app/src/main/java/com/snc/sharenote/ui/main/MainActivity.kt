@@ -5,22 +5,27 @@ import android.view.Menu
 import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.snc.sharenote.R
 import com.snc.sharenote.ui.main.ui.tradingNotes.main.TradingNotesFragment
+import com.snc.sharenote.ui.main.ui.tradingNotes.main.TradingNotesFragmentDirections
 import com.snc.sharenote.ui.main.ui.tradingNotes.note.TradingNoteFragment
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
-        val navController = findNavController(R.id.nav_host_fragment)
+        navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
@@ -31,6 +36,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_notifications
             )
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
@@ -41,21 +47,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             R.id.create_note -> {
-                onFragmentChange(MENU.CREATE_NOTE)
+                var directions:NavDirections =  TradingNotesFragmentDirections.actionTradingNotesToTradingNote()
+                navController.navigate(directions)
                 return true
             }
         }
         return false
-    }
-
-    private fun onFragmentChange(createNote: Int) {
-        when(createNote){
-            MENU.CREATE_NOTE -> {
-                val transition = supportFragmentManager.beginTransaction()
-                transition.replace(R.id.nav_host_fragment, TradingNoteFragment()).commitAllowingStateLoss()
-            }
-        }
     }
 }

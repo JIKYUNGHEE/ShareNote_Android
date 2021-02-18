@@ -21,7 +21,20 @@
         android:id="@+id/navigation_tradingNotes"
         android:name="com.snc.sharenote.ui.main.ui.tradingNotes.main.TradingNotesFragment"
         android:label="@string/title_tradingNotes"
-        tools:layout="@layout/fragment_trading_notes" />
+        tools:layout="@layout/fragment_trading_notes">
+
+        <action
+            android:id="@+id/action_tradingNotes_to_tradingNote"
+            app:destination="@id/navigation_tradingNote" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_tradingNote"
+        android:name="com.snc.sharenote.ui.main.ui.tradingNotes.note.TradingNoteFragment"
+        android:label="@string/title_tradingNote"
+        tools:layout="@layout/fragment_trading_note">
+
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
