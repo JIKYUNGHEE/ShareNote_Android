@@ -9,9 +9,7 @@ class TradingNoteAdapter(var tradingNotes: List<TradingNote>) :
     RecyclerView.Adapter<TradingNoteViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TradingNoteViewHolder {
-        return TradingNoteViewHolder(
-            parent
-        )
+        return TradingNoteViewHolder(parent)
     }
 
     override fun getItemCount(): Int {
@@ -22,7 +20,7 @@ class TradingNoteAdapter(var tradingNotes: List<TradingNote>) :
         var note = tradingNotes[position]
 
         holder.title.text = if (!TextUtils.isEmpty(note.title)) note.title else ""
-        holder.tags1.text = if (!TextUtils.isEmpty(note.tags[0])) note.tags [0] else ""
-        holder.tags2.text = if (!TextUtils.isEmpty(note.tags[1])) note.tags [1] else ""
+        holder.tags1.text = if (!TextUtils.isEmpty(note.tags[0])) note.tags[0] else ""
+        holder.tags2.text = if (!TextUtils.isEmpty(note.tags[1])) note.tags[1] else ""
     }
 }

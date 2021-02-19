@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.viewpager.widget.ViewPager
 import com.snc.sharenote.databinding.FragmentTradingNoteBinding
 
 class TradingNoteFragment : Fragment() {
@@ -19,6 +20,10 @@ class TradingNoteFragment : Fragment() {
     ): View? {
         tradingNoteViewModel = ViewModelProvider(this).get(TradingNoteViewModel::class.java)
         mTradingNoteBinding = FragmentTradingNoteBinding.inflate(inflater)
+        val stocksViewPager: ViewPager = mTradingNoteBinding.layoutStocks.stocksViewPager   //TODO. ViewPager2
+        tradingNoteViewModel.stockList.observe(viewLifecycleOwner, Observer {
+            stocksViewPager.adapter = StockViewPager(it)
+        })
 
         tradingNoteViewModel.text.observe(viewLifecycleOwner, Observer { mTradingNoteBinding.textTradingNote.text = it })
 

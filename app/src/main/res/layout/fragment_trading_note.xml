@@ -19,13 +19,22 @@
                 android:layout_height="match_parent"
                 android:text="Hello" />
 
-            <include layout="@layout/layout_post_trading_note_title"/>
+            <include
+                android:id="@+id/layout_title"
+                layout="@layout/layout_post_trading_note_title"/>
 
-            <include layout="@layout/layout_post_trading_note_stocks"/>
+            <include
+                android:id="@+id/layout_stocks"
+                layout="@layout/layout_post_trading_note_stocks"/>
 
-            <include layout="@layout/layout_post_trading_note_news"/>
+            <include
+                android:id="@+id/layout_news"
+                layout="@layout/layout_post_trading_note_news"/>
 
-            <include layout="@layout/layout_post_trading_note_memo"/>
+            <include
+                android:id="@+id/layout_memo"
+                layout="@layout/layout_post_trading_note_memo"/>
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </FrameLayout>

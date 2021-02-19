@@ -134,4 +134,9 @@
     <string name="post_trading_note_tags_hint">태그를 입력해주세요.(최대 10개)</string>
     <string name="post_trading_note_date">날짜</string>
     <string name="post_trading_note_day_hint">2021년 02월 18일 오후 7:43</string>
+    <string name="post_trading_note_stocks_title">거래주식</string>
+    <string name="post_trading_note_stock_name">주식명</string>
+    <string name="post_trading_note_stock_name_ex">기아차</string>
+    <string name="post_trading_note_stock_type">분류</string>
+    <string name="post_trading_note_stock_type_ex">매수</string>
 </resources>
