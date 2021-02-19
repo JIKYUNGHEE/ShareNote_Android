@@ -1,7 +1,5 @@
 package com.snc.sharenote.ui.main.ui.tradingNotes.data
 
-import com.snc.sharenote.ui.main.utils.notEmptyString
-
 enum class StockTitle(title: String, htmlFormat: String) {
 
     NAME("주식명", "<b><u>%s</u></b>"),

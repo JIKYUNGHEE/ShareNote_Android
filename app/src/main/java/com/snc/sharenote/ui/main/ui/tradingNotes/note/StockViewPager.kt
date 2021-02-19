@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.PagerAdapter
 import com.snc.sharenote.R
+import com.snc.sharenote.databinding.LayoutTradingNoteStockBinding
+import com.snc.sharenote.databinding.LayoutTradingNoteStockRowBinding
 import com.snc.sharenote.ui.main.ui.tradingNotes.data.Stock
 import kotlinx.android.synthetic.main.layout_trading_note_stock.view.*
 
@@ -20,14 +22,13 @@ class StockViewPager(var stockList: List<Stock>) : PagerAdapter() {
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val context= container.context
-        //TODO. ViewBinding 으로 변경
-        val view = LayoutInflater.from(context).inflate(R.layout.layout_trading_note_stock, container, false)
-        val rvTradingNoteStock = view.rv_trading_note_stock
+        val binding = LayoutTradingNoteStockBinding.inflate(LayoutInflater.from(context))
+        val rvTradingNoteStock = binding.rvTradingNoteStock
         rvTradingNoteStock.layoutManager = LinearLayoutManager(context)
         rvTradingNoteStock.adapter = StockAdapter(stockList[position])
 
-        container.addView(view)
-        return view
+        container.addView(binding.root)
+        return binding.root
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
