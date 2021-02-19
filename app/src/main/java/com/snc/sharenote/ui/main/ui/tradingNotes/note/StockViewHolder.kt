@@ -5,10 +5,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.snc.sharenote.R
-import kotlinx.android.synthetic.main.layout_trading_note_stock.view.*
+import kotlinx.android.synthetic.main.layout_trading_note_stock_row.view.*
 
 class StockViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
-    LayoutInflater.from(parent.context).inflate(R.layout.layout_trading_note_stock, parent, false)) {
+    //TODO. ViewBinding 으로 바꾸기
+    LayoutInflater.from(parent.context).inflate(R.layout.layout_trading_note_stock_row, parent, false)) {
 
-    val name: TextView = itemView.tv_name_contents
+    val title: TextView = itemView.tv_stock_title
+    val content: TextView = itemView.tv_stock_content
 }

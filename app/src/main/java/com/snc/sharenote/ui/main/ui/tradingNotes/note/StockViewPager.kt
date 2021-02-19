@@ -3,6 +3,7 @@ package com.snc.sharenote.ui.main.ui.tradingNotes.note
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.PagerAdapter
 import com.snc.sharenote.R
 import com.snc.sharenote.ui.main.ui.tradingNotes.data.Stock
@@ -18,8 +19,12 @@ class StockViewPager(var stockList: List<Stock>) : PagerAdapter() {
     }
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        val view = LayoutInflater.from(container.context).inflate(R.layout.layout_trading_note_stock, container, false)
-        view.tv_name_contents.text = stockList[position].name
+        val context= container.context
+        //TODO. ViewBinding 으로 변경
+        val view = LayoutInflater.from(context).inflate(R.layout.layout_trading_note_stock, container, false)
+        val rvTradingNoteStock = view.rv_trading_note_stock
+        rvTradingNoteStock.layoutManager = LinearLayoutManager(context)
+        rvTradingNoteStock.adapter = StockAdapter(stockList[position])
 
         container.addView(view)
         return view

@@ -19,9 +19,9 @@ class TradingNoteViewModel : ViewModel() {
 
     private fun reqGetStockList(): List<Stock>? {
         val lists = arrayListOf<Stock>()
-        lists.add(Stock("삼성전자"))
-        lists.add(Stock("기아자동차"))
-        lists.add(Stock("모바일리더"))
+        lists.add(Stock("삼성전자", "", "", "", "", ""))
+        lists.add(Stock("기아자동차", "", "", "", "", ""))
+        lists.add(Stock("모바일리더", "", "", "", "", ""))
 
         return lists
     }
