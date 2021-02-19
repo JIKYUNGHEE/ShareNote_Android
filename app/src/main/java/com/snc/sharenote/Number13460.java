@@ -7,7 +7,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class Marble13460 {
+/**
+ * 구슬탈출2
+ */
+public class Number13460 {
 
     //위, 아래, 오, 왼
     public static final int[] dy = {1, -1, 0, 0};
