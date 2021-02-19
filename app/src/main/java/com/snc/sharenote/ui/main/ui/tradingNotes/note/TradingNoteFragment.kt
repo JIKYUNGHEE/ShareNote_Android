@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
 import com.snc.sharenote.databinding.FragmentTradingNoteBinding
 
 class TradingNoteFragment : Fragment() {
@@ -21,16 +22,11 @@ class TradingNoteFragment : Fragment() {
     ): View? {
         mNoteViewModel = ViewModelProvider(this).get(TradingNoteViewModel::class.java)
         mBinding = FragmentTradingNoteBinding.inflate(inflater)
-        val rvStocks: RecyclerView = mBinding.layoutStocks.rvStocks
 
-        val rvLinearLayoutManager = LinearLayoutManager(context)
-        rvLinearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
-
-        rvStocks.layoutManager = rvLinearLayoutManager
-        rvStocks.setHasFixedSize(true)
-
+        //ViewPager
+        val vpStocks :ViewPager = mBinding.layoutStocks.vpStocks
         mNoteViewModel.stockList.observe(viewLifecycleOwner, Observer {
-            rvStocks.adapter = StockViewPager(it)
+            vpStocks.adapter = StockViewPager(it)
         })
 
         mNoteViewModel.text.observe(viewLifecycleOwner, Observer { mBinding.textTradingNote.text = it })
