@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.viewpager.widget.ViewPager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.snc.sharenote.databinding.FragmentTradingNoteBinding
 
 class TradingNoteFragment : Fragment() {
@@ -20,9 +21,16 @@ class TradingNoteFragment : Fragment() {
     ): View? {
         mNoteViewModel = ViewModelProvider(this).get(TradingNoteViewModel::class.java)
         mBinding = FragmentTradingNoteBinding.inflate(inflater)
-        val stocksViewPager: ViewPager = mBinding.layoutStocks.stocksViewPager   //TODO. ViewPager2
+        val rvStocks: RecyclerView = mBinding.layoutStocks.rvStocks
+
+        val rvLinearLayoutManager = LinearLayoutManager(context)
+        rvLinearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
+
+        rvStocks.layoutManager = rvLinearLayoutManager
+        rvStocks.setHasFixedSize(true)
+
         mNoteViewModel.stockList.observe(viewLifecycleOwner, Observer {
-            stocksViewPager.adapter = StockViewPager(it)
+            rvStocks.adapter = StockViewPager(it)
         })
 
         mNoteViewModel.text.observe(viewLifecycleOwner, Observer { mBinding.textTradingNote.text = it })

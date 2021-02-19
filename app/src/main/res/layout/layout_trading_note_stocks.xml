@@ -25,17 +25,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/stocks_view_pager"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_stocks"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
         android:layout_marginTop="12dp"
-        android:clipToPadding="false"
-        android:overScrollMode="never"
         app:layout_constraintTop_toBottomOf="@id/btn_post_trading_note_stocks_add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
-
-    </androidx.viewpager.widget.ViewPager>
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:listitem="@layout/layout_trading_note_stock">
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

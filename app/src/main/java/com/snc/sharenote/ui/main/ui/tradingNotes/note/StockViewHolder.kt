@@ -10,5 +10,5 @@ import kotlinx.android.synthetic.main.layout_trading_note_stock.view.*
 class StockViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
     LayoutInflater.from(parent.context).inflate(R.layout.layout_trading_note_stock, parent, false)) {
 
-    val name: TextView = itemView.tv_name_title
+    val name: TextView = itemView.tv_name_contents
 }
