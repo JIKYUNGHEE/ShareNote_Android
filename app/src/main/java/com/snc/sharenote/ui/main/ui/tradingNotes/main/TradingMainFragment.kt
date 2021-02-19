@@ -9,13 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.snc.sharenote.databinding.FragmentTradingNotesBinding
+import com.snc.sharenote.databinding.FragmentTradingMainBinding
 import com.snc.sharenote.ui.main.RecyclerViewItemDecoration
 
-class TradingNotesFragment : Fragment() {
+class TradingMainFragment : Fragment() {
 
-    private lateinit var mTradingNotesBinding: FragmentTradingNotesBinding
-    private lateinit var tradingNotesViewModel: TradingNotesViewModel
+    private lateinit var mBinding: FragmentTradingMainBinding
+    private lateinit var mMainViewModel: TradingMainViewModel
     private var drawerToggle = true
 
     override fun onCreateView(
@@ -23,13 +23,13 @@ class TradingNotesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        tradingNotesViewModel =
-            ViewModelProvider(this).get(TradingNotesViewModel::class.java)
-        mTradingNotesBinding = FragmentTradingNotesBinding.inflate(inflater)
+        mMainViewModel =
+            ViewModelProvider(this).get(TradingMainViewModel::class.java)
+        mBinding = FragmentTradingMainBinding.inflate(inflater)
 
 
-        var targetView = mTradingNotesBinding.content
-        var drawerButton = mTradingNotesBinding.drawer
+        var targetView = mBinding.content
+        var drawerButton = mBinding.drawer
         drawerButton.setOnClickListener {
             if (drawerToggle) {
                 var objectAnimator: ObjectAnimator =
@@ -45,21 +45,21 @@ class TradingNotesFragment : Fragment() {
             drawerToggle = !drawerToggle
         }
 
-        var rvTradingNotes = mTradingNotesBinding.rvTradingNotes
+        var rvTradingNotes = mBinding.rvTradingNotes
         rvTradingNotes.layoutManager = LinearLayoutManager(context)
         rvTradingNotes.addItemDecoration(RecyclerViewItemDecoration(30))
 
-        tradingNotesViewModel.tradingNotes.observe(viewLifecycleOwner, Observer {
+        mMainViewModel.tradingNotes.observe(viewLifecycleOwner, Observer {
             rvTradingNotes.adapter =
-                TradingNoteAdapter(
+                TradingMainAdapter(
                     it
                 )
         })
 
-        tradingNotesViewModel.dayOfTrading.observe(viewLifecycleOwner, Observer {
-            mTradingNotesBinding.dayTradingNotes.text = it
+        mMainViewModel.dayOfTrading.observe(viewLifecycleOwner, Observer {
+            mBinding.dayTradingNotes.text = it
         })
 
-        return mTradingNotesBinding.root
+        return mBinding.root
     }
 }

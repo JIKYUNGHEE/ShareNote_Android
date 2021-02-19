@@ -12,7 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.snc.sharenote.R
-import com.snc.sharenote.ui.main.ui.tradingNotes.main.TradingNotesFragmentDirections
+import com.snc.sharenote.ui.main.ui.tradingNotes.main.TradingMainFragmentDirections
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_home,
                 R.id.navigation_analysis,
-                R.id.navigation_tradingNotes,
+                R.id.navigation_tradingMain,
                 R.id.navigation_notifications
             )
         )
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.create_note -> {
-                var directions:NavDirections =  TradingNotesFragmentDirections.actionTradingNotesToTradingNote()
+                var directions:NavDirections =  TradingMainFragmentDirections.actionTradingMainToTradingNote()
                 navController.navigate(directions)
                 return true
             }

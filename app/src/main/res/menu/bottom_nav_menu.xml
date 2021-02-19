@@ -15,7 +15,7 @@
 <!--        android:title="@string/title_analysis" />-->
 
     <item
-        android:id="@+id/navigation_tradingNotes"
+        android:id="@+id/navigation_tradingMain"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="tradingnotes"/>
 <!--        android:title="@string/title_tradingNotes" />-->

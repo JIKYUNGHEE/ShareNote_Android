@@ -18,13 +18,13 @@
         tools:layout="@layout/fragment_analysis" />
 
     <fragment
-        android:id="@+id/navigation_tradingNotes"
-        android:name="com.snc.sharenote.ui.main.ui.tradingNotes.main.TradingNotesFragment"
+        android:id="@+id/navigation_tradingMain"
+        android:name="com.snc.sharenote.ui.main.ui.tradingNotes.main.TradingMainFragment"
         android:label="@string/title_tradingNotes"
-        tools:layout="@layout/fragment_trading_notes">
+        tools:layout="@layout/fragment_trading_main">
 
         <action
-            android:id="@+id/action_tradingNotes_to_tradingNote"
+            android:id="@+id/action_tradingMain_to_tradingNote"
             app:destination="@id/navigation_tradingNote" />
     </fragment>
 

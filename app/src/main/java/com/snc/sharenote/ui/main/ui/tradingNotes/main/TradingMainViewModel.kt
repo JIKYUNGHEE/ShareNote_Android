@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import com.snc.sharenote.R
 import com.snc.sharenote.ui.main.ui.tradingNotes.data.TradingNote
 
-class TradingNotesViewModel(application: Application) : AndroidViewModel(application) {
+class TradingMainViewModel(application: Application) : AndroidViewModel(application) {
     private val context = getApplication<Application>().applicationContext
 
     private val _dayOfTrading = MutableLiveData<String>().apply {

@@ -11,22 +11,22 @@ import androidx.viewpager.widget.ViewPager
 import com.snc.sharenote.databinding.FragmentTradingNoteBinding
 
 class TradingNoteFragment : Fragment() {
-    private lateinit var tradingNoteViewModel: TradingNoteViewModel
-    private lateinit var mTradingNoteBinding: FragmentTradingNoteBinding
+    private lateinit var mBinding: FragmentTradingNoteBinding
+    private lateinit var mNoteViewModel: TradingNoteViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        tradingNoteViewModel = ViewModelProvider(this).get(TradingNoteViewModel::class.java)
-        mTradingNoteBinding = FragmentTradingNoteBinding.inflate(inflater)
-        val stocksViewPager: ViewPager = mTradingNoteBinding.layoutStocks.stocksViewPager   //TODO. ViewPager2
-        tradingNoteViewModel.stockList.observe(viewLifecycleOwner, Observer {
+        mNoteViewModel = ViewModelProvider(this).get(TradingNoteViewModel::class.java)
+        mBinding = FragmentTradingNoteBinding.inflate(inflater)
+        val stocksViewPager: ViewPager = mBinding.layoutStocks.stocksViewPager   //TODO. ViewPager2
+        mNoteViewModel.stockList.observe(viewLifecycleOwner, Observer {
             stocksViewPager.adapter = StockViewPager(it)
         })
 
-        tradingNoteViewModel.text.observe(viewLifecycleOwner, Observer { mTradingNoteBinding.textTradingNote.text = it })
+        mNoteViewModel.text.observe(viewLifecycleOwner, Observer { mBinding.textTradingNote.text = it })
 
-        return mTradingNoteBinding.root
+        return mBinding.root
     }
 }
