@@ -17,7 +17,12 @@ class StockAdapter(var stock: Stock) : RecyclerView.Adapter<StockViewHolder>() {
 
     override fun onBindViewHolder(holder: StockViewHolder, position: Int) {
         val stockTitle = stock.initStockTitleValue()[position]
-        var contentHtml: String = String.format(stockTitle.htmlFormat, stockTitle.content)
+        var contentHtml: String = ""
+        when (stockTitle.content.size) {
+            1 ->  contentHtml =String.format(stockTitle.htmlFormat, stockTitle.content[0])
+            2 ->  contentHtml =String.format(stockTitle.htmlFormat, stockTitle.content[0], stockTitle.content[1])
+        }
+        holder.title.text = stockTitle.title
         holder.content.text = contentHtml.htmlToSpanned()
     }
 }
