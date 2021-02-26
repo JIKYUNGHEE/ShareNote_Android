@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 import com.snc.sharenote.databinding.FragmentTradingNoteBinding
 
 class TradingNoteFragment : Fragment() {
@@ -28,6 +29,9 @@ class TradingNoteFragment : Fragment() {
         mNoteViewModel.stockList.observe(viewLifecycleOwner, Observer {
             vpStocks.adapter = StockViewPager(it)
         })
+
+        val tabLayout:TabLayout = mBinding.layoutStocks.tabIndicator
+        tabLayout.setupWithViewPager(vpStocks, true)
 
         mNoteViewModel.text.observe(viewLifecycleOwner, Observer { mBinding.textTradingNote.text = it })
 
