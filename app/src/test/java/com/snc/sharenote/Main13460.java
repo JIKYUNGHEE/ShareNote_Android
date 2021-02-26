@@ -8,18 +8,17 @@ import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 /**
- * 구슬탈출2
+ * 구슬탈출2(13460)
  */
-public class Number13460 {
-
-    //위, 아래, 오, 왼
-    public static final int[] dy = {1, -1, 0, 0};
+public class Main13460 {
+                                    //위, 아래, 오, 왼
     public static final int[] dx = {0, 0, 1, -1};
+    public static final int[] dy = {1, -1, 0, 0};
 
-    public static final int EAST = 0;
-    public static final int WEST = 1;
-    public static final int SOUTH = 2;
-    public static final int NORTH = 3;
+    public static final int LEFT = 0;
+    public static final int RIGHT = 1;
+    public static final int BOTTOM = 2;
+    public static final int TOP = 3;
 
     public static final char RED = 'R';
     public static final char BLUE = 'B';
@@ -39,8 +38,7 @@ public class Number13460 {
 
     public static int result;
 
-    public void test() throws IOException {
-        System.out.println(1111);
+    public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -76,12 +74,12 @@ public class Number13460 {
         bw.close();
     }
 
-    private void move(Ball now, int cnt, int dir) {
+    private static void move(Ball now, int cnt, int dir) {
         if (cnt > LIMIT) {
             return;
         }
 
-        for (int i = 0; i < 4; i++) {   //오른쪽,왼쪽,위,아래
+        for (int i = 0; i < 4; i++) {
             if (isSameDirection(i, dir)) continue;
 
             Ball next = new Ball();
@@ -132,7 +130,7 @@ public class Number13460 {
                 continue;
 
             //같은 칸이면 많이 움직인 구슬을 이전 칸으로 이동
-            if (next.bx == next.rx && next.bx == next.by) {
+            if (next.bx == next.rx && next.by == next.ry) {
                 if (bcnt > rcnt) {
                     next.bx -= dx[i];
                     next.by -= dy[i];
@@ -143,29 +141,29 @@ public class Number13460 {
             }
 
             //방문 했으면 안감
-            if(visited[next.rx][next.ry][next.bx][next.by]) continue;
+            if (visited[next.rx][next.ry][next.bx][next.by]) continue;
 
             visited[next.rx][next.ry][next.bx][next.by] = true;
-            move(next, cnt+1, i);
+            move(next, cnt + 1, i);
             visited[next.rx][next.ry][next.bx][next.by] = false;
         }
     }
 
-    private boolean isSameDirection(int now, int before) {
+    private static boolean isSameDirection(int now, int before) {
         if (before == now) return true;
         else {
             switch (before) {
-                case EAST:
-                    if (now == WEST) return true;
+                case LEFT:
+                    if (now == RIGHT) return true;
                     break;
-                case WEST:
-                    if (now == EAST) return true;
+                case RIGHT:
+                    if (now == LEFT) return true;
                     break;
-                case SOUTH:
-                    if (now == NORTH) return true;
+                case BOTTOM:
+                    if (now == TOP) return true;
                     break;
-                case NORTH:
-                    if (now == SOUTH) return true;
+                case TOP:
+                    if (now == BOTTOM) return true;
                     break;
                 default:
                     return false;
@@ -174,7 +172,7 @@ public class Number13460 {
         return false;
     }
 
-    class Ball {
+    static class Ball {
         int rx;
         int ry;
         int bx;
@@ -191,3 +189,4 @@ public class Number13460 {
         }
     }
 }
+
