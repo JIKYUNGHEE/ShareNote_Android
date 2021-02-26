@@ -1,0 +1,55 @@
+ShareNote
+
+[기술]
+
+이모티콘 컨테이너
+https://wooooooak.github.io/android/2020/07/30/emoticon_container/
+
+
+iOS 디자인 용어
+https://minnimalism.medium.com/ios-ui-%EB%94%94%EC%9E%90%EC%9D%B8-%EC%9A%A9%EC%96%B4-%EC%8A%A4%ED%84%B0%EB%94%94-17eafd8ac5ef
+
+Android UI 디테일
+https://fornewid.medium.com/%EB%86%93%EC%B9%98%EA%B8%B0-%EC%89%AC%EC%9A%B4-%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-ui-%EB%94%94%ED%85%8C%EC%9D%BC-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0-5e5f98c836af
+
+주간달력
+https://altongmon.tistory.com/818
+
+Android UI 오픈소스
+https://psklog.tistory.com/73
+https://github.com/wasabeef/awesome-android-ui
+
+html태그종류
+https://taptorestart.tistory.com/entry/Q-%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9CAndroid-TextView%EC%97%90-HTML-%EC%BD%94%EB%93%9C-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%82%AC%EC%9A%A9-%EA%B0%80%EB%8A%A5%ED%95%9C-%ED%83%9C%EA%B7%B8-%EC%A2%85%EB%A5%98%EB%8A%94
+
+
+[네트워크]
+
+http://tcpschool.com/java/java_io_stream
+
+
+[kotlin]
+String extension
+https://thdev.tech/kotlin/2018/08/13/Kotlin-Improving/
+
+https://www.androidhuman.com/2016-07-06-kotlin_let_apply_run_with
+
+view extension
+https://www.androidhuman.com/2017-11-26-kotlin_android_extensions_on_viewholder
+
+
+DevEnvironment
+minSdk: 21(kakao 기준)
+
+
+[아이디어]
+- 이해한 목표: 꾸준한 매매일지/금융일지 작성을 통해, 나만의 투자철학을 만든다.
+
+- 서비스 전체를 보았을 때, 매매일지/금융일지 비중이 작다고 생각됩니다.
+    - > 매매일지/금융일지 자체의 디벨롭이 필요하다고 생각합니다.(지금까지 생성된 와이어프레임의 주제별 프레임 수도 다른 주제가 더 많아보입니다.)
+        - >  매매일지/금융일지 자체의 편의성, 유용함을 높히는게 먼저라고 생각합니다.
+        - > 수익률 관련 부분이 매매일지에서는 중요하다고 생각됩니다.(참고. 증권플러스)
+    - > 메인페이지에 들어가면, 쉐어노티픽 관련 부분이 더 많이 자리잡고 있어서 매매일지 보다, 쉐어노티픽이 더 메인 같은 느낌이 듭니다.
+        - > 토스나 뱅크샐러드 지출내역 통계 내역 처럼, 그래프를 사용해서 보여지는 ‘나’의 상태도 메인에 들어갈 만큼 중요하다고 생각합니다.(최근 회의 중 나의 페이지 내용)
+
+- 레벨 같은 경우, 지금시점에서 레벨에 따른 차이(보상)이 없다면, 1차 오픈시에는 없애고, 향후 업데이트 시, 보여주는 것이 낫다고 생각합니다.
