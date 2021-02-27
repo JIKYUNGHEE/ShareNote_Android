@@ -10,11 +10,6 @@ import com.snc.sharenote.ui.main.ui.tradingNotes.data.StockType
 
 class TradingNoteViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is TradingNote Fragment"
-    }
-    val text: LiveData<String> = _text
-
     private val _stockList = MutableLiveData<List<Stock>>().apply {
         value = reqGetStockList()
     }

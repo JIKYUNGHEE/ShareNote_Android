@@ -12,10 +12,10 @@
     <dimen name="ll_trading_note_stock_margin">14dp</dimen>
     <dimen name="tv_post_trading_note_width">96dp</dimen>
 
-
+    <dimen name="trading_note_each_title">48dp</dimen>
 
     <!-- font -->
-    <dimen name="tv_trading_note_title">16sp</dimen>
+    <dimen name="tv_trading_note_title">18sp</dimen>
     <dimen name="tv_trading_note_test_tag">12sp</dimen>
     <dimen name="tv_trading_note_content_size">14sp</dimen>
     <dimen name="cv_btn_height">56dp</dimen>

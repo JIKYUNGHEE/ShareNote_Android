@@ -37,10 +37,6 @@ class TradingNoteFragment : Fragment() {
         mBinding.layoutNews.tvTitle.text = getString(R.string.post_trading_note_news_title)
         mBinding.layoutNews.tabIndicator.setupWithViewPager(newsViewPager, true)
 
-        mNoteViewModel.text.observe(
-            viewLifecycleOwner,
-            Observer { mBinding.textTradingNote.text = it })
-
         return mBinding.root
     }
 }

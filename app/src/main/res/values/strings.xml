@@ -144,6 +144,7 @@
 
     <string name="post_trading_note_news_title">관련뉴스</string>
     <string name="show_news">기사 본문 보기</string>
+    <string name="post_trading_note_memo">메모</string>
 
 
 </resources>

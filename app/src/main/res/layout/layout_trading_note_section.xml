@@ -8,8 +8,9 @@
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_height="@dimen/trading_note_each_title"
         android:text="@string/post_trading_note_stocks_title"
+        android:textSize="@dimen/tv_trading_note_title"
         android:gravity="center_vertical"
         android:layout_marginLeft="24dp"
         app:layout_constraintTop_toTopOf="@id/btn_post_trading_note_stocks_add"

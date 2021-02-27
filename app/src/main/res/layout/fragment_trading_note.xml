@@ -13,11 +13,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/text_trading_note"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Hello" />
 
             <include
                 android:id="@+id/layout_title"
