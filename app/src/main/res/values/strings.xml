@@ -139,9 +139,11 @@
     <string name="post_trading_note_stock_name_ex">기아차</string>
     <string name="post_trading_note_stock_type">분류</string>
     <string name="post_trading_note_stock_type_ex">매수</string>
-
-
     <string name="remove_stock_note">삭제</string>
     <string name="edit_stock_note">수정하기</string>
+
     <string name="post_trading_note_news_title">관련뉴스</string>
+    <string name="show_news">기사 본문 보기</string>
+
+
 </resources>
