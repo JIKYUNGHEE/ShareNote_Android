@@ -6,6 +6,7 @@
     android:layout_height="320dp">
 
     <TextView
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:text="@string/post_trading_note_stocks_title"
@@ -36,7 +37,7 @@
         >
 
         <androidx.viewpager.widget.ViewPager
-            android:id="@+id/vp_stocks"
+            android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="210dp"
             android:layout_centerInParent="true"

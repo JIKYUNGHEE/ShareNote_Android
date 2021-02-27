@@ -25,11 +25,11 @@
 
             <include
                 android:id="@+id/layout_stocks"
-                layout="@layout/layout_trading_note_stocks"/>
+                layout="@layout/layout_trading_note_section"/>
 
             <include
                 android:id="@+id/layout_news"
-                layout="@layout/layout_trading_note_news"/>
+                layout="@layout/layout_trading_note_section"/>
 
             <include
                 android:id="@+id/layout_memo"

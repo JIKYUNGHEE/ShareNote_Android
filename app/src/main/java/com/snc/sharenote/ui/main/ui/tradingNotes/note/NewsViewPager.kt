@@ -3,28 +3,28 @@ package com.snc.sharenote.ui.main.ui.tradingNotes.note
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.PagerAdapter
-import com.snc.sharenote.databinding.LayoutTradingNoteStockBinding
-import com.snc.sharenote.ui.main.ui.tradingNotes.data.Stock
+import com.snc.sharenote.databinding.LayoutTradingNoteNewsBinding
+import com.snc.sharenote.ui.main.ui.tradingNotes.data.News
 
-class StockViewPager(private var stockList: List<Stock>) : PagerAdapter() {
+class NewsViewPager(private val newsList: List<News>) : PagerAdapter() {
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
         return view == `object`
     }
 
     override fun getCount(): Int {
-        return stockList.size
+        return newsList.size
     }
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        val context= container.context
-        val binding = LayoutTradingNoteStockBinding.inflate(LayoutInflater.from(context))
-        val rvTradingNoteStock = binding.rvTradingNoteStock
-        rvTradingNoteStock.layoutManager = LinearLayoutManager(context)
-        rvTradingNoteStock.adapter = StockAdapter(stockList[position])
+        val binding : LayoutTradingNoteNewsBinding = LayoutTradingNoteNewsBinding.inflate(LayoutInflater.from(container.context))
 
+        val news = newsList[position]
+        binding.tvNewspaper.text = news.newspaper
+        binding.tvTitle.text = news.title
+        binding.tvSummary.text = news.summary
         container.addView(binding.root)
+
         return binding.root
     }
 

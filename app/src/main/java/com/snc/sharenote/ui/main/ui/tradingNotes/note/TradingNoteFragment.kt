@@ -7,10 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
+import com.snc.sharenote.R
 import com.snc.sharenote.databinding.FragmentTradingNoteBinding
 
 class TradingNoteFragment : Fragment() {
@@ -24,16 +23,23 @@ class TradingNoteFragment : Fragment() {
         mNoteViewModel = ViewModelProvider(this).get(TradingNoteViewModel::class.java)
         mBinding = FragmentTradingNoteBinding.inflate(inflater)
 
-        //ViewPager
-        val vpStocks :ViewPager = mBinding.layoutStocks.vpStocks
+        val stocksViewPager: ViewPager = mBinding.layoutStocks.viewpager
         mNoteViewModel.stockList.observe(viewLifecycleOwner, Observer {
-            vpStocks.adapter = StockViewPager(it)
+            stocksViewPager.adapter = StockViewPager(it)
         })
+        mBinding.layoutStocks.tvTitle.text = getString(R.string.post_trading_note_stocks_title)
+        mBinding.layoutStocks.tabIndicator.setupWithViewPager(stocksViewPager, true)
 
-        val tabLayout:TabLayout = mBinding.layoutStocks.tabIndicator
-        tabLayout.setupWithViewPager(vpStocks, true)
+        val newsViewPager: ViewPager = mBinding.layoutNews.viewpager
+        mNoteViewModel.newsList.observe(viewLifecycleOwner, Observer {
+            newsViewPager.adapter = NewsViewPager(it)
+        })
+        mBinding.layoutNews.tvTitle.text = getString(R.string.post_trading_note_news_title)
+        mBinding.layoutNews.tabIndicator.setupWithViewPager(newsViewPager, true)
 
-        mNoteViewModel.text.observe(viewLifecycleOwner, Observer { mBinding.textTradingNote.text = it })
+        mNoteViewModel.text.observe(
+            viewLifecycleOwner,
+            Observer { mBinding.textTradingNote.text = it })
 
         return mBinding.root
     }

@@ -3,6 +3,7 @@ package com.snc.sharenote.ui.main.ui.tradingNotes.note
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.snc.sharenote.ui.main.ui.tradingNotes.data.News
 import com.snc.sharenote.ui.main.ui.tradingNotes.data.Stock
 import com.snc.sharenote.ui.main.ui.tradingNotes.data.StockTitle
 import com.snc.sharenote.ui.main.ui.tradingNotes.data.StockType
@@ -18,6 +19,11 @@ class TradingNoteViewModel : ViewModel() {
         value = reqGetStockList()
     }
     val stockList: LiveData<List<Stock>> = _stockList
+
+    private val _newsList = MutableLiveData<List<News>>().apply {
+        value = reqGetNewsList()
+    }
+    val newsList: LiveData<List<News>> = _newsList
 
     private fun reqGetStockList(): List<Stock>? {
         val lists = arrayListOf<Stock>()
@@ -52,6 +58,34 @@ class TradingNoteViewModel : ViewModel() {
             )
         )
 
+        return lists
+    }
+
+    private fun reqGetNewsList(): List<News>? {
+        val lists = arrayListOf<News>()
+        lists.add(
+            News(
+                "연합뉴스",
+                "주식 엄청난 수익률 달성해 출연 료 안받아도 된다 한 연예인111111",
+                "소비자에게 비용전가 미 38개주 구글 반독점 소송가세소비 자에게 비용전가 미 38개주 구글 반독점 소송가세소비자에 게 비용 전가미 38개주 구글 반독점 소송가세 소송가세소  소송가세 소…"
+            )
+        )
+
+        lists.add(
+            News(
+                "네이버뉴스",
+                "주식 엄청난 수익률 달성해 출연 료 안받아도 된다 한 연예인버2222222",
+                "소비자에게 비용전가 미 38개주 구글 반독점 소송가세소비 자에게 비용전가 미 38개주 구글 반독점 소송가세소비자에 게 비용 전가미 38개주 구글 반독점 소송가세 소송가세소  소송가세 소…"
+            )
+        )
+
+        lists.add(
+            News(
+                "연합뉴스",
+                "주식 엄청난 수익률 달성해 출연 료 안받아도 된다 한 연예인33333",
+                "소비자에게 비용전가 미 38개주 구글 반독점 소송가세소비 자에게 비용전가 미 38개주 구글 반독점 소송가세소비자에 게 비용 전가미 38개주 구글 반독점 소송가세 소송가세소  소송가세 소…"
+            )
+        )
         return lists
     }
 }
