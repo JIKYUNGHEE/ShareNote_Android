@@ -1,4 +1,4 @@
-package com.snc.sharenote.ui.main.ui.shareKeep
+package com.snc.sharenote.ui.main.ui.sharekeep
 
 import android.os.Bundle
 import android.view.LayoutInflater

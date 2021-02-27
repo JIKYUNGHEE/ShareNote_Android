@@ -22,6 +22,11 @@ https://github.com/wasabeef/awesome-android-ui
 html태그종류
 https://taptorestart.tistory.com/entry/Q-%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9CAndroid-TextView%EC%97%90-HTML-%EC%BD%94%EB%93%9C-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%82%AC%EC%9A%A9-%EA%B0%80%EB%8A%A5%ED%95%9C-%ED%83%9C%EA%B7%B8-%EC%A2%85%EB%A5%98%EB%8A%94
 
+디자이너와 작업하기
+https://m.blog.naver.com/nakim02/221543322427
+
+BottomSheet
+https://codinginflow.com/tutorials/android/modal-bottom-sheet
 
 [네트워크]
 

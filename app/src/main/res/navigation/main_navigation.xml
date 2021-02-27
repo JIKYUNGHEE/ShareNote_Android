@@ -38,7 +38,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.snc.sharenote.ui.main.ui.shareKeep.ShareKeepFragment"
+        android:name="com.snc.sharenote.ui.main.ui.sharekeep.ShareKeepFragment"
         android:label="@string/title_shareKeep"
         tools:layout="@layout/fragment_sharekeep" />
 </navigation>
