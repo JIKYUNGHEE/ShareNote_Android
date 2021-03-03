@@ -16,7 +16,7 @@ data class Stock(
                 0 -> addStockTitle = StockTitle.createStockTitle(StockTitle.NAME, name)
                 1 -> addStockTitle = StockTitle.createStockTitle(StockTitle.TYPE, type.nameKor)
                 2 -> addStockTitle = StockTitle.createStockTitle(StockTitle.TRADING_TIME, tradingTime)
-                3 -> addStockTitle = StockTitle.createStockTitle(StockTitle.CALLING_PRICE, buyingPrice)
+                3 -> addStockTitle = StockTitle.createStockTitle(StockTitle.BUYING_PRICE, buyingPrice)
                 4 -> addStockTitle = StockTitle.createStockTitle(StockTitle.SELLING_PRICE, sellingPrice)
                 5 -> addStockTitle = StockTitle.createStockTitle(StockTitle.VALUE, value)
             }

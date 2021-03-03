@@ -27,6 +27,7 @@ https://m.blog.naver.com/nakim02/221543322427
 
 BottomSheet
 https://codinginflow.com/tutorials/android/modal-bottom-sheet
+https://hongbeomi.medium.com/bottomsheetbehavior-%ED%8C%8C%ED%97%A4%EC%B9%98%EA%B8%B0-4e93e820d30a
 
 [네트워크]
 

@@ -134,17 +134,39 @@
     <string name="post_trading_note_tags_hint">태그를 입력해주세요.(최대 10개)</string>
     <string name="post_trading_note_date">날짜</string>
     <string name="post_trading_note_day_hint">2021년 02월 18일 오후 7:43</string>
+
     <string name="post_trading_note_stocks_title">거래주식</string>
     <string name="post_trading_note_stock_name">주식명</string>
+    <string name="post_trading_note_stock_name_hint">종목/코드명 검색</string>
     <string name="post_trading_note_stock_name_ex">기아차</string>
+
     <string name="post_trading_note_stock_type">분류</string>
     <string name="post_trading_note_stock_type_ex">매수</string>
+    <string name="post_trading_note_stock_type_buy">매수</string>
+    <string name="post_trading_note_stock_type_sell">매도</string>
+    <string name="post_trading_note_stock_type_allocation">배당</string>
+    <string name="post_trading_note_stock_type_none">미거래</string>
+
+    <string name="post_trading_note_stock_type_buy_price">매수가</string>
+    <string name="post_trading_note_stock_type_valuation">평가금액</string>
+    <string name="post_trading_note_stock_type_dividend_price">배당주가</string>
+    <string name="post_trading_note_stock_type_now_price">현재가</string>
+    <string name="post_trading_note_stock_type_week_dividend">주당배당금</string>
+    <string name="post_trading_note_stock_type_allocation_profit">배당 수익</string>
+
+    <string name="won">원</string>
+    <string name="ju">주</string>
+
+
+    <string name="post_trading_note_time">거래시간</string>
+    <string name="post_trading_note_time_hint">2021년 02월 18일 오후 7:43</string>
+
+    <string name="save">저장</string>
     <string name="remove_stock_note">삭제</string>
     <string name="edit_stock_note">수정하기</string>
 
     <string name="post_trading_note_news_title">관련뉴스</string>
     <string name="show_news">기사 본문 보기</string>
     <string name="post_trading_note_memo">메모</string>
-
 
 </resources>
