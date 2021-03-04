@@ -13,20 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.test.viewpager.ViewPagerActivity">        </activity>
-        <activity android:name=".ui.test.calendar.CalendarActivity"></activity>
+        <activity android:name=".ui.main.TradingNoteActivity"></activity>
+        <activity android:name=".ui.test.viewpager.ViewPagerActivity"></activity>
+        <activity android:name=".ui.test.calendar.CalendarActivity" />
         <activity
             android:name=".ui.test.scroll.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
-
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.main.MainActivity"
             android:label="@string/title_activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

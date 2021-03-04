@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/trading_navigation"
+    app:startDestination="@+id/navigation_write_tradingNote">
+
+    <fragment
+        android:id="@+id/navigation_write_tradingNote"
+        android:name="com.snc.sharenote.ui.main.tradingNotes.write.TradingNoteWriteFragment"
+        android:label="@string/title_tradingNote"
+        tools:layout="@layout/fragment_trading_note_write">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detail_tradingNote"
+        android:name="com.snc.sharenote.ui.main.tradingNotes.detail.TradingNoteDetailFragment"
+        android:label="@string/title_tradingNote"
+        tools:layout="@layout/fragment_trading_note_detail">
+
+    </fragment>
+</navigation>

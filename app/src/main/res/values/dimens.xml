@@ -1,5 +1,7 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="tall_toolbar_height">64dp</dimen>
+
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
@@ -20,4 +22,5 @@
     <dimen name="tv_trading_note_content_size">14sp</dimen>
     <dimen name="cv_btn_height">56dp</dimen>
     <dimen name="cv_btn_width">144dp</dimen>
+    <dimen name="tv_app_bar_title">21sp</dimen>
 </resources>
