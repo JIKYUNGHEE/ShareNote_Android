@@ -5,12 +5,15 @@
     android:id="@+id/trading_navigation"
     app:startDestination="@+id/navigation_write_tradingNote">
 
+
     <fragment
         android:id="@+id/navigation_write_tradingNote"
         android:name="com.snc.sharenote.ui.main.tradingNotes.write.TradingNoteWriteFragment"
         android:label="@string/title_tradingNote"
         tools:layout="@layout/fragment_trading_note_write">
-
+        <action
+            android:id="@+id/action_write_to_detail"
+            app:destination="@id/navigation_detail_tradingNote" />
     </fragment>
 
     <fragment

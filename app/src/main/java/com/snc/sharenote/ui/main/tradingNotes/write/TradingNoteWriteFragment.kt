@@ -9,11 +9,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
 import com.snc.sharenote.R
-import com.snc.sharenote.databinding.FragmentTradingNoteBinding
+import com.snc.sharenote.databinding.FragmentTradingNoteWriteBinding
 import com.snc.sharenote.ui.main.tradingNotes.CustomBottomSheetDialog
 
 class TradingNoteWriteFragment : Fragment() {
-    private lateinit var mBinding: FragmentTradingNoteBinding
+    private lateinit var mBinding: FragmentTradingNoteWriteBinding
     private lateinit var mNoteWriteViewModel: TradingNoteWriteViewModel
 
     override fun onCreateView(
@@ -21,7 +21,7 @@ class TradingNoteWriteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         mNoteWriteViewModel = ViewModelProvider(this).get(TradingNoteWriteViewModel::class.java)
-        mBinding = FragmentTradingNoteBinding.inflate(inflater)
+        mBinding = FragmentTradingNoteWriteBinding.inflate(inflater)
 
         //거래주식
         val stocksViewPager: ViewPager = mBinding.layoutStocks.viewpager

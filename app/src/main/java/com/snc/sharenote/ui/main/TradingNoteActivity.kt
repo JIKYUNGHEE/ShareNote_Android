@@ -1,16 +1,19 @@
 package com.snc.sharenote.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.google.android.material.appbar.AppBarLayout
 import com.snc.sharenote.R
-import com.snc.sharenote.ui.main.tradingNotes.main.TradingMainFragmentDirections
+import com.snc.sharenote.ui.main.tradingNotes.write.TradingNoteWriteFragmentDirections
 
 class TradingNoteActivity : AppCompatActivity() {
     private lateinit var navController: NavController
@@ -28,6 +31,12 @@ class TradingNoteActivity : AppCompatActivity() {
             )
         )
 
+        var actionBar: ActionBar? = supportActionBar
+        actionBar?.title = getString(R.string.title_tradingNotes)
+        var appBarLayout = findViewById<AppBarLayout>(R.id.app_bar)
+        var toolbar = appBarLayout.findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
@@ -39,7 +48,7 @@ class TradingNoteActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.save_note -> {
-                var directions: NavDirections =  TradingMainFragmentDirections.actionTradingMainToTradingNote()
+                var directions:NavDirections = TradingNoteWriteFragmentDirections.actionWriteToDetail()
                 navController.navigate(directions)
                 return true
             }
