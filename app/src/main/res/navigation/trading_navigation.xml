@@ -5,7 +5,6 @@
     android:id="@+id/trading_navigation"
     app:startDestination="@+id/navigation_write_tradingNote">
 
-
     <fragment
         android:id="@+id/navigation_write_tradingNote"
         android:name="com.snc.sharenote.ui.main.tradingNotes.write.TradingNoteWriteFragment"

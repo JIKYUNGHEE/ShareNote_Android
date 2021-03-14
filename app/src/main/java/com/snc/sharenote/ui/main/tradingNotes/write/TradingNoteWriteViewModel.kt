@@ -3,22 +3,72 @@ package com.snc.sharenote.ui.main.tradingNotes.write
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.snc.sharenote.ui.main.tradingNotes.data.News
-import com.snc.sharenote.ui.main.tradingNotes.data.Stock
-import com.snc.sharenote.ui.main.tradingNotes.data.StockTitle
-import com.snc.sharenote.ui.main.tradingNotes.data.StockType
+import com.snc.sharenote.ui.main.tradingNotes.data.*
 
-class TradingNoteWriteViewModel : ViewModel() {
+class TradingNoteWriteViewModel() : ViewModel() {
+    private val _tradingNote = MutableLiveData<TradingNote>().apply {
+        value = createTradingNote()
+    }
+
+    val tradingNote: LiveData<TradingNote> = _tradingNote
+    val mTradingNote: TradingNote? = tradingNote.value
+
+    private fun createTradingNote(): TradingNote? {
+        //TODO. 빈값 제어
+        val tradingNote = TradingNote(
+            title = title?.value.orEmpty(),
+            tags = tagList?.value.orEmpty(),
+            date = date?.value.orEmpty(),
+            stockList = stockList?.value,
+            newsList = newsList?.value,
+            memo = "메모입니다."
+        )
+        return tradingNote
+    }
+
+    private val _title = MutableLiveData<String>().apply {
+        value = reqTitle()
+    }
+    val title: LiveData<String>? = _title
+
+    private val _tagList = MutableLiveData<List<String>>().apply {
+        value = reqTagList()
+    }
+
+    val tagList: LiveData<List<String>>? = _tagList
+
+    private val _date = MutableLiveData<String>().apply {
+        value = reqDate()
+    }
+
+    val date: LiveData<String>? = _date
 
     private val _stockList = MutableLiveData<List<Stock>>().apply {
         value = reqGetStockList()
     }
-    val stockList: LiveData<List<Stock>> = _stockList
+    val stockList: LiveData<List<Stock>>? = _stockList
 
     private val _newsList = MutableLiveData<List<News>>().apply {
         value = reqGetNewsList()
     }
-    val newsList: LiveData<List<News>> = _newsList
+    val newsList: LiveData<List<News>>? = _newsList
+
+    private fun reqTitle(): String? {
+        return "매매일지 제목입니다."
+    }
+
+    private fun reqTagList(): List<String>? {
+        val list = arrayListOf<String>()
+        list.add("태그1")
+        list.add("태그2")
+        list.add("태그3")
+        list.add("태그4")
+        return list
+    }
+
+    private fun reqDate(): String? {
+        return "2021.03.14 AM8:47"
+    }
 
     private fun reqGetStockList(): List<Stock>? {
         val lists = arrayListOf<Stock>()

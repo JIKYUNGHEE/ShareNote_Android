@@ -54,6 +54,4 @@ class TradingMainViewModel(application: Application) : AndroidViewModel(applicat
             arrayListOf(context.getString(R.string.trading_note_test3_tag1), context.getString(R.string.trading_note_test3_tag2))))
         return list
     }
-
-
 }

@@ -1,5 +1,9 @@
 package com.snc.sharenote.ui.main.tradingNotes.data
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class Stock(
     val name: String,           //주식명
     val type: StockType,           //분류
@@ -7,7 +11,7 @@ data class Stock(
     val buyingPrice: String,   //매수가
     val sellingPrice: String,   //매도가
     val value: String      //평가금액
-) {
+) : Parcelable {
     fun initStockTitleValue(): ArrayList<StockTitle> {
         val stockTitleValue = ArrayList<StockTitle>()
         for (stockTitle in StockTitle.values()) {

@@ -3,9 +3,13 @@ package com.snc.sharenote.ui.main
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
@@ -14,9 +18,16 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.appbar.AppBarLayout
 import com.snc.sharenote.R
 import com.snc.sharenote.ui.main.tradingNotes.write.TradingNoteWriteFragmentDirections
+import com.snc.sharenote.ui.main.tradingNotes.write.TradingNoteWriteViewModel
 
 class TradingNoteActivity : AppCompatActivity() {
     private lateinit var navController: NavController
+    private val mWriteViewModel: TradingNoteWriteViewModel by viewModels {
+        object : ViewModelProvider.Factory {
+            override fun <T : ViewModel?> create(modelClass: Class<T>): T =
+                TradingNoteWriteViewModel() as T
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,8 +59,11 @@ class TradingNoteActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.save_note -> {
-                var directions:NavDirections = TradingNoteWriteFragmentDirections.actionWriteToDetail()
-                navController.navigate(directions)
+                mWriteViewModel.tradingNote.observe(this, Observer {
+                    var directions: NavDirections =
+                        TradingNoteWriteFragmentDirections.actionWriteToDetail()
+                    navController.navigate(directions)
+                })
                 return true
             }
         }

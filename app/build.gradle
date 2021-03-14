@@ -35,8 +35,12 @@ android {
         unitTests.returnDefaultValues = true
     }
 
-    viewBinding {
+    viewBinding {   //뷰바인딩 사용
         enabled = true
+    }
+
+    androidExtensions { //Parcelize annotation 사용
+        experimental = true
     }
 }
 

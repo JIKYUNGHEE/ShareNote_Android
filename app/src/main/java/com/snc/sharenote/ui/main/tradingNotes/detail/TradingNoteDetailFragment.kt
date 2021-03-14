@@ -5,27 +5,30 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.snc.sharenote.R
+import com.snc.sharenote.databinding.FragmentTradingNoteDetailBinding
+import com.snc.sharenote.ui.main.tradingNotes.write.TradingNoteWriteViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
+
+private const val ARG_TRADING_NOTE = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [TradingNoteDetailFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TradingNoteDetailFragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
+    private lateinit var mBinding:FragmentTradingNoteDetailBinding
+    private val mNoteWriteViewModel: TradingNoteWriteViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
+            param1 = it.getString(ARG_TRADING_NOTE)
             param2 = it.getString(ARG_PARAM2)
         }
     }
@@ -34,25 +37,19 @@ class TradingNoteDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_trading_note_detail, container, false)
+
+        mBinding = FragmentTradingNoteDetailBinding.inflate(inflater)
+        mNoteWriteViewModel.mTradingNote?.let {
+            mBinding.tv.text = it.title + it.tags + it.stockList.toString() + it.newsList.toString() + it.memo
+        }
+        return mBinding.root
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TradingNoteDetailFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
         fun newInstance(param1: String, param2: String) =
             TradingNoteDetailFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
+                    putString(ARG_TRADING_NOTE, param1)
                     putString(ARG_PARAM2, param2)
                 }
             }
