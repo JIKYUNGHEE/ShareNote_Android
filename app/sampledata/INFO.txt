@@ -1,4 +1,4 @@
-ShareNote
+ShareNote_info
 
 [기술]
 이모티콘 컨테이너
